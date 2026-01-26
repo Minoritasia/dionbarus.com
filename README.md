@@ -5,7 +5,7 @@
 
 <p>
 <b>Website sementara</b>, menunggu waktu dan kemauan untuk membuat sesuatu yang baru.<br>
-Saat ini anda sedang melihat <i>sebidang kanvas putih kosong</i> — minimalis, tapi penuh dengan harapan, apa iya?.
+Saat ini anda sedang melihat <i>sebidang kanvas putih kosong</i> — minimalis, tapi penuh dengan harapan, apa iya?
 </p>
 
 <!-- BADGES -->
@@ -22,11 +22,11 @@ Saat ini anda sedang melihat <i>sebidang kanvas putih kosong</i> — minimalis, 
   <tr>
     <td align="center">
 
-<h2>🚧 Belum ada yang bisa dilihat di sini</h2>
+<h2>🚧 Belum Ada Yang Bisa Dilihat Di Sini!</h2>
 
 <p>
 Sudah dibilang kamu tidak akan menemukan satu hal pun yang berguna di laman ini.<br>
-Tapi yakin saja, sesuatu yang istimewa akan segera something fascinating is <i>(???)</i> datang…<br>
+Tapi yakin saja, sesuatu yang istimewa akan segera <i>(???)</i> datang…<br>
 <b>walaupun saya sarankan jangan terlalu berharap banyak.</b>
 </p>
 
@@ -64,9 +64,9 @@ Loading ambition...
 
 <!-- FOOTER -->
 <p>
-<b>Sembari menunggu yang tidak pasti:</b> Silakan nikmati warna putih ini. Terbukti tidak akan merusak mata!.
+<b>Sembari menunggu yang tidak pasti:</b> Silakan nikmati warna putih ini. Terbukti tidak akan merusak mata!
 </p>
 
-<sub>© <b>Dion Barus</b> — 2010-2026. Powered by Solar Panel dan Pertalita RON 90.</sub>
+<sub>© <b>Dion Barus</b> — 2010-2026. Powered by Solar Panel dan Pertalite RON 90.</sub>
 
 </div>

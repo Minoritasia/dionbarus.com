@@ -67,8 +67,6 @@ Loading ambition...
 <b>Meanwhile:</b> enjoy the silence. It’s very exclusive.
 </p>
 
-<sub>© <b>Your Name</b> — powered by caffeine, denial, and future intentions.</sub>
+<sub>© <b>Dion Barus</b> — 2010-2026. Powered by caffeine, denial, and future intentions.</sub>
 
 </div>
-
-If you want it even more “wow” without GitHub eating the styling: add a banner image at the top (a wide PNG). I can generate a slick banner concept (minimalist, cyber, vintage terminal, whatever) and you just drop it into your repo and link it in the README.

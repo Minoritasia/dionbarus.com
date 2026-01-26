@@ -1,11 +1,11 @@
 <div align="center">
 
 <!-- HERO -->
-<h1>🧠✨ Welcome to Dion Barus Website</h1>
+<h1>🧠✨ Selamat Datang di Website Dion Barus</h1>
 
 <p>
-<b>Temporary website</b>, pending a miraculous burst of diligence.<br>
-Right now you’re looking at a <i>bare-naked canvas of pure white</i> — minimalism, but make it emotional damage.
+<b>Website sementara</b>, menunggu waktu dan kemauan untuk membuat sesuatu yang baru.<br>
+Saat ini anda sedang melihat <i>sebidang kanvas putih kosong</i> — minimalis, tapi penuh dengan harapan, apa iya?.
 </p>
 
 <!-- BADGES -->
@@ -22,17 +22,17 @@ Right now you’re looking at a <i>bare-naked canvas of pure white</i> — minim
   <tr>
     <td align="center">
 
-<h2>🚧 Nothing to see here (yet)</h2>
+<h2>🚧 Belum ada yang bisa dilihat di sini</h2>
 
 <p>
-You won't find a single thing here, of course.<br>
-But rest assured, something fascinating is <i>theoretically</i> coming…<br>
-<b>though I’d advise you not to hold your breath.</b>
+Sudah dibilang kamu tidak akan menemukan satu hal pun yang berguna di laman ini.<br>
+Tapi yakin saja, sesuatu yang istimewa akan segera something fascinating is <i>(???)</i> datang…<br>
+<b>walaupun saya sarankan jangan terlalu berharap banyak.</b>
 </p>
 
 <hr>
 
-<p><b>Current build:</b> <code>v0.0.0</code> (a bold creative choice)</p>
+<p><b>Current build:</b> <code>v0.0.0</code> (belum mulai sama sekali)</p>
 
 <pre>
 Loading ambition...
@@ -40,7 +40,7 @@ Loading ambition...
 </pre>
 
 <p>
-<sub>Tip: staring at this page increases motivation by 0%. Proven by science (mine).</sub>
+<sub>Tip: bar progess di atas tidak bergerak sama sekali jadi jangan berharap akan ada pergerakan.</sub>
 </p>
 
     </td>
@@ -50,23 +50,23 @@ Loading ambition...
 <br>
 
 <!-- ROADMAP -->
-<h3>🗺️ Roadmap (optimism edition)</h3>
+<h3>🗺️ Rencana Mendatang (Edisi Optimis)</h3>
 
 </div>
 
-- [ ] Add something impressive  
-- [ ] Add something useful  
-- [ ] Add something that convinces people I had a plan  
-- [x] Ship the void ✅
+- [ ] Tambahkan sesuatu yang menarik secara visual
+- [ ] Tambahkan sesuatu yang berguna untuk pengunjung
+- [ ] Tambahkan sesuatu untuk meyakinkan pengunjung bahwa saya memiliki rencana untuk website ini  
+- [x] Tambahkan laman HTML (laman yang sedang anda baca)✅
 
 <div align="center">
 <br>
 
 <!-- FOOTER -->
 <p>
-<b>Meanwhile:</b> enjoy the silence. It’s very exclusive.
+<b>Sembari menunggu yang tidak pasti:</b> Silakan nikmati warna putih ini. Terbukti tidak akan merusak mata!.
 </p>
 
-<sub>© <b>Dion Barus</b> — 2010-2026. Powered by caffeine, denial, and future intentions.</sub>
+<sub>© <b>Dion Barus</b> — 2010-2026. Powered by Solar Panel dan Pertalita RON 90.</sub>
 
 </div>

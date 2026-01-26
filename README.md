@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HERO -->
-<h1>🧠✨ Welcome to My Digital Masterpiece</h1>
+<h1>🧠✨ Welcome to Dion Barus Website</h1>
 
 <p>
 <b>Temporary website</b>, pending a miraculous burst of diligence.<br>

@@ -22,7 +22,7 @@ Saat ini kalian sedang melihat <i>sebidang kanvas putih kosong</i> — minimalis
   <tr>
     <td align="center">
 
-<h2>🚧 Belum Ada Yang Bisa Dilihat Di Sini 🚧</h2>
+<h2>🚧 Belum Ada Yang Bisa Dilihat Di Sini!</h2>
 
 <p>
 Sudah dibilang kalian tidak akan menemukan satu hal pun yang berguna di laman ini.<br>

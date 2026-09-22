@@ -1,149 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Under Construction</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Archivo+Black&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #ffffff;
-    --fg: #0a0a0a;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  * {
-    box-sizing: border-box;
-  }
+  <title>Under Construction — Back Soon</title>
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
+  <!-- Cool, modern fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-  }
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #777777;
+      --line: #e8e8e8;
+    }
 
-  /* subtle diagonal stripe pattern, construction-tape vibes but classy */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(
-      135deg,
-      #000 0px,
-      #000 2px,
-      transparent 2px,
-      transparent 40px
-    );
-    opacity: 0.05;
-    pointer-events: none;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .wrap {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    max-width: 640px;
-  }
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
 
-  .badge {
-    display: inline-block;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    border: 1px solid var(--fg);
-    padding: 0.4em 1em;
-    margin-bottom: 2rem;
-    font-weight: 500;
-  }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-  h1 {
-    font-family: "Archivo Black", "Space Grotesk", sans-serif;
-    font-size: clamp(2.2rem, 7vw, 4rem);
-    line-height: 1.05;
-    margin: 0 0 1.25rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-  }
+    /* Subtle background grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.45;
+      background-image:
+        linear-gradient(to right, var(--line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+      );
+    }
 
-  h1 .emoji {
-    display: inline-block;
-    animation: wobble 2.4s ease-in-out infinite;
-  }
+    .page {
+      position: relative;
+      width: min(1100px, 90%);
+      padding: 40px 0;
+      text-align: center;
+    }
 
-  @keyframes wobble {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-8deg); }
-    75% { transform: rotate(8deg); }
-  }
+    .top-line {
+      width: 48px;
+      height: 4px;
+      background: var(--fg);
+      margin: 0 auto 32px;
+      animation: grow 1s ease-out forwards;
+    }
 
-  p {
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
-    line-height: 1.6;
-    color: #333;
-    margin: 0 0 0.75rem;
-  }
+    .eyebrow {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
 
-  .fine-print {
-    font-family: "JetBrains Mono", monospace;
-    margin-top: 2.5rem;
-    font-size: 0.78rem;
-    color: #888;
-    letter-spacing: 0.02em;
-  }
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(4rem, 12vw, 10rem);
+      line-height: 0.85;
+      letter-spacing: -0.075em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
 
-  .divider {
-    width: 60px;
-    height: 2px;
-    background: var(--fg);
-    margin: 2rem auto;
-    border: none;
-  }
+    h1 span {
+      display: block;
+    }
 
-  .blink {
-    animation: blink 1.4s steps(2, start) infinite;
-  }
+    h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--fg);
+    }
 
-  @keyframes blink {
-    to { visibility: hidden; }
-  }
+    .message {
+      max-width: 580px;
+      margin: 42px auto 0;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.7;
+      color: #333;
+    }
 
-  footer {
-    position: fixed;
-    bottom: 1.25rem;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.7rem;
-    color: #aaa;
-    letter-spacing: 0.05em;
-  }
-</style>
+    .message strong {
+      color: var(--fg);
+      font-weight: 700;
+    }
+
+    .construction {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      padding: 12px 18px;
+      border: 1px solid var(--fg);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--fg);
+      border-radius: 50%;
+      animation: blink 1.4s infinite;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 28px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer span {
+      color: var(--fg);
+    }
+
+    /* Floating "404-ish" decoration */
+    .corner {
+      position: fixed;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .corner.top-left {
+      top: 28px;
+      left: 30px;
+    }
+
+    .corner.top-right {
+      top: 28px;
+      right: 30px;
+    }
+
+    .corner.bottom-left {
+      bottom: 28px;
+      left: 30px;
+    }
+
+    .corner.bottom-right {
+      bottom: 28px;
+      right: 30px;
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes grow {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body::before {
+        background-size: 32px 32px;
+      }
+
+      h1 .outline {
+        -webkit-text-stroke: 1px var(--fg);
+      }
+
+      .message {
+        margin-top: 32px;
+      }
+
+      .corner {
+        display: none;
+      }
+
+      .footer {
+        bottom: 18px;
+        font-size: 0.65rem;
+      }
+    }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <span class="badge">Status: Chaos</span>
-    <h1>Under Construction <span class="emoji">🚧</span></h1>
-    <p>Yes, it's still not done. No, I don't want to talk about it.</p>
-    <p>Somewhere between "great idea" and "actually finishing it," this page got stuck. 🛠️</p>
-    <hr class="divider">
-    <p>Check back soon<span class="blink">_</span> — soon being a relative, deeply flexible concept.</p>
-    <p class="fine-print">In the meantime, please enjoy this very expensive blank space.</p>
-  </div>
-  <footer>Built with 100% pure procrastination.</footer>
+
+  <div class="corner top-left">STATUS // 01</div>
+  <div class="corner top-right">PLEASE STAND BY</div>
+  <div class="corner bottom-left">© 2026</div>
+  <div class="corner bottom-right">LOADING...</div>
+
+  <main class="page">
+
+    <div class="top-line"></div>
+
+    <div class="eyebrow">
+      System temporarily unavailable
+    </div>
+
+    <h1>
+      <span>Under</span>
+      <span class="outline">Construction</span>
+    </h1>
+
+    <p class="message">
+      Apparently, <strong>“launching soon”</strong> sounded better than
+      “I’m still figuring things out.”<br>
+      The site is getting a little makeover.
+      <strong>We’ll be back soon.</strong> Probably. 😌
+    </p>
+
+    <div class="construction">
+      <span class="dot"></span>
+      Currently rebuilding things
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    Thanks for your patience <span>•</span> Good things take time
+  </footer>
+
 </body>
 </html>

@@ -1,283 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Under Construction — Please Hold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #fafafa;
+    --muted: #6b6b6b;
+    --accent: #ff3b00; /* used sparingly */
+    --line: #e2e2e2;
+  }
 
-  <title>Under Construction — Back Soon</title>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Cool, modern fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  html, body { height: 100%; }
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #0a0a0a;
-      --muted: #777777;
-      --line: #e8e8e8;
-    }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+    position: relative;
+  }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  /* Subtle diagonal construction stripes */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(0,0,0,0.025) 40px,
+      rgba(0,0,0,0.025) 42px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
+  .wrap {
+    max-width: 720px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+  }
 
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "Inter", sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+  }
 
-    /* Subtle background grid */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.45;
-      background-image:
-        linear-gradient(to right, var(--line) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(
-        to bottom,
-        transparent,
-        black 20%,
-        black 80%,
-        transparent
-      );
-    }
+  .badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
 
-    .page {
-      position: relative;
-      width: min(1100px, 90%);
-      padding: 40px 0;
-      text-align: center;
-    }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
 
-    .top-line {
-      width: 48px;
-      height: 4px;
-      background: var(--fg);
-      margin: 0 auto 32px;
-      animation: grow 1s ease-out forwards;
-    }
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+  }
 
-    .eyebrow {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
+  h1 .strike {
+    position: relative;
+    display: inline-block;
+  }
 
-    h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(4rem, 12vw, 10rem);
-      line-height: 0.85;
-      letter-spacing: -0.075em;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
+  h1 .strike::after {
+    content: "";
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    top: 55%;
+    height: 0.08em;
+    background: var(--accent);
+    transform: rotate(-2deg);
+    transform-origin: left center;
+    animation: strike 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    transform: scaleX(0) rotate(-2deg);
+  }
 
-    h1 span {
-      display: block;
-    }
+  @keyframes strike {
+    to { transform: scaleX(1) rotate(-2deg); }
+  }
 
-    h1 .outline {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--fg);
-    }
+  .lead {
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 52ch;
+    margin-bottom: 1rem;
+  }
 
-    .message {
-      max-width: 580px;
-      margin: 42px auto 0;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.7;
-      color: #333;
-    }
+  .lead .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+  }
 
-    .message strong {
-      color: var(--fg);
-      font-weight: 700;
-    }
+  .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
 
-    .construction {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 36px;
-      padding: 12px 18px;
-      border: 1px solid var(--fg);
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
+  .sub .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    background: var(--ink);
+    vertical-align: text-bottom;
+    animation: blink 1s steps(2) infinite;
+  }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: var(--fg);
-      border-radius: 50%;
-      animation: blink 1.4s infinite;
-    }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
 
-    .footer {
-      position: fixed;
-      bottom: 28px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+  /* Progress bar */
+  .progress {
+    margin-bottom: 2.5rem;
+  }
 
-    .footer span {
-      color: var(--fg);
-    }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+  }
 
-    /* Floating "404-ish" decoration */
-    .corner {
-      position: fixed;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #aaa;
-    }
+  .progress-track {
+    height: 6px;
+    background: var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+  }
 
-    .corner.top-left {
-      top: 28px;
-      left: 30px;
-    }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--ink);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+  }
 
-    .corner.top-right {
-      top: 28px;
-      right: 30px;
-    }
+  /* Footer note */
+  .footer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .corner.bottom-left {
-      bottom: 28px;
-      left: 30px;
-    }
+  .footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    transition: color 0.2s, border-color 0.2s;
+  }
 
-    .corner.bottom-right {
-      bottom: 28px;
-      right: 30px;
-    }
+  .footer a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
 
-    @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.2;
-      }
-    }
+  /* Floating emoji */
+  .float {
+    position: fixed;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    animation: floaty 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .float.f1 { top: 12%; left: 8%; animation-delay: 0s; }
+  .float.f2 { top: 78%; left: 85%; animation-delay: 1.5s; }
+  .float.f3 { top: 20%; left: 88%; animation-delay: 3s; }
+  .float.f4 { top: 82%; left: 10%; animation-delay: 4.5s; }
 
-    @keyframes grow {
-      from {
-        transform: scaleX(0);
-      }
-      to {
-        transform: scaleX(1);
-      }
-    }
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(8deg); }
+  }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      body::before {
-        background-size: 32px 32px;
-      }
+  @media (max-width: 480px) {
+    body { padding: 1.25rem; }
+    .float { display: none; }
+  }
 
-      h1 .outline {
-        -webkit-text-stroke: 1px var(--fg);
-      }
-
-      .message {
-        margin-top: 32px;
-      }
-
-      .corner {
-        display: none;
-      }
-
-      .footer {
-        bottom: 18px;
-        font-size: 0.65rem;
-      }
-    }
-
-    /* Respect reduced-motion preferences */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-      }
-    }
-  </style>
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    h1 .strike::after { transform: scaleX(1) rotate(-2deg); }
+  }
+</style>
 </head>
-
 <body>
 
-  <div class="corner top-left">STATUS // 01</div>
-  <div class="corner top-right">PLEASE STAND BY</div>
-  <div class="corner bottom-left">© 2010-2026</div>
-  <div class="corner bottom-right">LOADING...</div>
+  <!-- decorative floaters -->
+  <span class="float f1" aria-hidden="true">🚧</span>
+  <span class="float f2" aria-hidden="true">🔨</span>
+  <span class="float f3" aria-hidden="true">⚠️</span>
+  <span class="float f4" aria-hidden="true">👷</span>
 
-  <main class="page">
+  <main class="wrap">
 
-    <div class="top-line"></div>
-
-    <div class="eyebrow">
-      System temporarily unavailable
+    <div class="badge">
+      <span class="dot" aria-hidden="true"></span>
+      Status: Still Figuring It Out
     </div>
 
     <h1>
-      <span>Under</span>
-      <span class="outline">Construction</span>
+      We're <span class="strike">almost</span> done.
     </h1>
 
-    <p class="message">
-      Apparently, <strong>“launching soon”</strong> sounded better than
-      “I’m still figuring things out.”<br>
-      The site is getting a little makeover.
-      <strong>We’ll be back soon.</strong> Probably. 😌
+    <p class="lead">
+      The site is <span class="mono">under construction</span> — which is developer-speak
+      for "we have a vision, a deadline, and absolutely no idea what we're doing."
     </p>
 
-    <div class="construction">
-      <span class="dot"></span>
-      Currently rebuilding things
+    <p class="sub">
+      &gt; npm run build<br>
+      &gt; building something great…<br>
+      &gt; <span class="cursor" aria-hidden="true"></span>
+    </p>
+
+    <div class="progress" aria-label="Progress: 87 percent, or so we claim">
+      <div class="progress-label">
+        <span>Progress</span>
+        <span id="pct">87%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="bar"></div>
+      </div>
     </div>
+
+    <footer class="footer">
+      <span>📍 Coming soon to a browser near you</span>
+      <span><a href="https://github.com" target="_blank" rel="noopener">GitHub →</a></span>
+    </footer>
 
   </main>
 
-  <footer class="footer">
-    Thanks for your patience <span>•</span> Good things take time
-  </footer>
+<script>
+  // Fake "honest" progress: hovers around 87%, occasionally slips backwards.
+  const bar = document.getElementById('bar');
+  const pct = document.getElementById('pct');
+  let value = 0;
 
+  function tick() {
+    if (value < 87) {
+      value += Math.random() * 4;
+      if (value > 87) value = 87;
+    } else {
+      // gentle drift, because honesty is important
+      value += (Math.random() - 0.5) * 1.5;
+      value = Math.max(82, Math.min(92, value));
+    }
+    bar.style.width = value + '%';
+    pct.textContent = Math.round(value) + '%';
+    setTimeout(tick, 400 + Math.random() * 600);
+  }
+
+  // Start after a short delay so the animation is visible
+  setTimeout(tick, 300);
+</script>
 </body>
 </html>

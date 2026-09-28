@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klub Rebahan Indonesia — Produktif Itu Overrated</title>
+<meta name="description" content="Situs resmi para pejuang rebahan. Panduan hidup santai bagi kamu yang capek bahkan sebelum mulai.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F7; --ink:#1F2A44; --soft:#55607A; --sun:#FFD24C; --coral:#FF8E9B; --mint:#BFECD5; --sky:#C9DBFF; --white:#FBFCFE;
+  --display:'Anton','Impact','Arial Narrow',sans-serif; --body:'Figtree',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.06rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:.01em}
+h2{font-size:clamp(2.2rem,5.5vw,3.5rem);margin-bottom:.4em}
+p.lead{color:var(--soft);max-width:56ch}
+
+/* NAV */
+nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font:400 1.4rem var(--display);letter-spacing:.02em;text-decoration:none}
+nav a.tag{font-size:.9rem;text-decoration:none;background:var(--white);padding:6px 14px;border-radius:99px}
+
+/* HERO */
+.hero{padding:44px 0 90px;position:relative}
+.hero h1{font-size:clamp(3.8rem,15vw,10.5rem);line-height:.92;text-transform:uppercase;max-width:9ch}
+.hero h1 span{background:var(--sun);padding:0 .1em;border-radius:.1em;display:inline-block;transform:rotate(-2deg)}
+.hero .lead{margin:26px 0 34px;font-size:1.2rem}
+.sloth{position:absolute;right:2%;top:0;width:150px;transform-origin:50% 0;animation:swing 4.5s ease-in-out infinite;text-align:center;pointer-events:none}
+.sloth::before{content:"";display:block;width:3px;height:110px;background:var(--ink);margin:0 auto;opacity:.5}
+.sloth b{display:block;font-size:6rem;line-height:1;font-weight:400;margin-top:-6px}
+@keyframes swing{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
+.gen{background:var(--white);border-radius:32px 12px 32px 12px;padding:clamp(20px,4vw,34px);max-width:720px;display:grid;gap:16px}
+.gen label{font:400 1.7rem/1.1 var(--display);letter-spacing:.01em}
+.gen .row{display:flex;gap:10px;flex-wrap:wrap}
+#tugas{flex:1 1 220px;font:500 1rem var(--body);color:var(--ink);background:var(--bg);border:2px solid transparent;border-radius:99px;padding:14px 20px}
+#tugas:focus{border-color:var(--ink);outline:0}
+#go,#cp{font:700 1rem var(--body);border:0;border-radius:99px;cursor:pointer;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .2s}
+#go{background:var(--ink);color:var(--white);padding:14px 26px}
+#go:hover{background:#34426b;transform:rotate(-2deg) scale(1.04)}
+#out{background:#FFF1BF;border-radius:20px;padding:18px 22px;display:grid;gap:12px}
+#hasil{font-size:1.12rem;line-height:1.55;font-weight:500}
+#out.pop{animation:pop .4s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(.96) rotate(-1deg)}to{transform:none}}
+#out .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9rem;color:var(--soft)}
+#cp{background:var(--white);color:var(--ink);padding:8px 16px;font-size:.9rem}
+#cp:hover{background:var(--mint)}
+
+/* SECTIONS */
+section{padding:70px 0}
+.reasons{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:34px}
+.r{padding:28px;border-radius:26px;grid-column:span 2}
+.r:nth-child(1){grid-column:span 3;background:var(--mint);border-radius:40px 12px 40px 12px}
+.r:nth-child(2){grid-column:span 3;background:var(--sky);border-radius:12px 40px 12px 40px}
+.r:nth-child(3){background:var(--white)}
+.r:nth-child(4){background:#FFE3E6}
+.r:nth-child(5){background:#FFF1BF}
+.r .e{font-size:2.2rem;display:block;margin-bottom:6px}
+.r h3{font-size:1.6rem;margin-bottom:8px}
+.r p{color:#3b4763;font-size:1rem}
+
+/* METER */
+.meter{background:var(--white);border-radius:36px;padding:clamp(24px,5vw,52px);display:grid;gap:22px}
+.meter input{width:100%;accent-color:var(--coral);height:34px;cursor:pointer}
+#verdict{font:400 clamp(1.7rem,4vw,2.4rem)/1.15 var(--display);min-height:2.5em}
+#verdict small{display:block;font:400 1rem var(--body);color:var(--soft);margin-top:6px}
+
+/* TIMELINE */
+ol.tl{list-style:none;padding:0;margin-top:34px;border-left:4px dashed #b4bfd6;margin-left:12px}
+ol.tl li{position:relative;padding:0 0 30px 34px}
+ol.tl li::before{content:attr(data-e);position:absolute;left:-22px;top:-4px;width:40px;height:40px;background:var(--sun);border-radius:50%;display:grid;place-items:center;font-size:1.2rem}
+ol.tl time{font:400 1.5rem var(--display);letter-spacing:.03em}
+ol.tl p{color:var(--soft);max-width:60ch}
+
+/* FAQ */
+details{background:var(--white);border-radius:20px;padding:18px 24px;margin-bottom:12px}
+summary{font:700 1.1rem var(--body);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";transition:transform .3s}
+details[open] summary::after{transform:rotate(135deg)}
+details p{margin-top:10px;color:var(--soft)}
+
+/* FOOTER */
+footer{background:var(--ink);color:#DCE3F3;margin-top:50px;padding:60px 0 40px;border-radius:44px 44px 0 0}
+footer h2{color:var(--white);font-size:clamp(1.6rem,4vw,2.3rem)}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:start}
+footer p{color:#B6C0D9;font-size:.98rem}
+footer ul{list-style:none;padding:0;display:grid;gap:8px;font-size:.98rem}
+footer hr{border:0;border-top:1px dashed #4a587c;margin:34px 0 20px}
+footer .fine{font-size:.85rem;color:#93A0BF}
+
+@media(max-width:760px){
+  .sloth{width:90px;right:0}.sloth b{font-size:3.4rem}.sloth::before{height:60px}
+  .r,.r:nth-child(n){grid-column:span 6}
+  footer .cols{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">🦥 Klub Rebahan</a>
+    <a class="tag" href="#faq">Ada pertanyaan? Sok atuh</a>
+  </nav>
+
+  <header class="hero">
+    <div class="sloth" aria-hidden="true"><b>🦥</b></div>
+    <h1>Produktif itu <span>overrated.</span></h1>
+    <p class="lead">Selamat datang di situs resmi Klub Rebahan Indonesia. Anggota kami sudah ribuan, tapi belum ada satu pun yang datang ke kopdar karena, ya, males.</p>
+    <div class="gen">
+      <label for="tugas">Generator Alasan Menunda 🎲</label>
+      <div class="row">
+        <input id="tugas" type="text" maxlength="60" placeholder="Apa yang mau kamu tunda? contoh: ngerjain laporan" autocomplete="off">
+        <button id="go" type="button">Cariin alasan</button>
+      </div>
+      <div id="out">
+        <p id="hasil" aria-live="polite">Ketik tugasmu, lalu kami carikan alasan yang meyakinkan. Atau setidaknya terdengar meyakinkan.</p>
+        <div class="meta"><span id="kred">Kredibilitas: menunggu kamu berbuat dosa.</span><button id="cp" type="button" hidden>Salin alasan</button></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="alasan">
+    <h2>Lima alasan rebahan lebih masuk akal dari karier kamu</h2>
+    <p class="lead">Kami sudah riset. Lebih tepatnya, kami sudah rebahan sambil scroll, lalu menyebutnya riset.</p>
+    <div class="reasons">
+      <article class="r"><span class="e">🛏️</span><h3>Kasur tidak pernah menagih laporan</h3><p>Bos bilang "urgent" tiga kali sehari. Kasur cuma bilang "sini". Coba tebak siapa yang lebih pengertian.</p></article>
+      <article class="r"><span class="e">📉</span><h3>Ekspektasi rendah, kecewa nol</h3><p>Kalau targetmu cuma bangun sebelum Zuhur, setiap hari adalah pencapaian. Kamu sudah menang sebelum sarapan.</p></article>
+      <article class="r"><span class="e">🔋</span><h3>Baterai hemat</h3><p>Kamu bukan mesin. Bahkan mesin butuh dimatikan. Kamu cuma butuh dimatikan sampai Senin depan.</p></article>
+      <article class="r"><span class="e">📅</span><h3>"Besok" itu solusi abadi</h3><p>Besok selalu ada, selalu sabar, dan tidak pernah komplain. Sahabat sejati para penunda.</p></article>
+      <article class="r"><span class="e">🍜</span><h3>Mi instan menunggu</h3><p>Ada urusan mendesak? Ada. Tapi perut lebih mendesak, dan dapur cuma tiga langkah. Jauh sekali, memang.</p></article>
+    </div>
+  </section>
+
+  <section id="meteran">
+    <div class="meter">
+      <div>
+        <h2>Meteran rebahan hari ini</h2>
+        <p class="lead">Geser sesuai kondisi jiwa dan raga kamu. Kami tidak menghakimi. Sedikit.</p>
+      </div>
+      <label for="lvl" class="sr" style="position:absolute;left:-999px">Tingkat rebahan</label>
+      <input id="lvl" type="range" min="0" max="100" value="50">
+      <div id="verdict" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="jadwal">
+    <h2>Jadwal harian anggota teladan</h2>
+    <p class="lead">Dijamin tidak ada rapat, kecuali rapat dengan diri sendiri soal siapa yang akan cuci piring. Spoiler: tidak ada.</p>
+    <ol class="tl">
+      <li data-e="⏰"><time>06.00</time><p>Alarm berbunyi. Kamu menekan "tunda" dengan refleks seorang atlet profesional.</p></li>
+      <li data-e="📱"><time>08.30</time><p>Membuka mata. Langsung scroll media sosial. "Cek notifikasi", katamu, padahal isinya orang yang sudah liburan ke Bali.</p></li>
+      <li data-e="🍳"><time>11.00</time><p>Sarapan, yang secara teknis sudah jadi makan siang. Tidak apa-apa, waktu itu cuma konsep.</p></li>
+      <li data-e="💼"><time>13.00</time><p>Membuka laptop. Mengetik satu kalimat. Merayakannya dengan tidur siang 90 menit.</p></li>
+      <li data-e="🛋️"><time>19.00</time><p>Niat olahraga. Sudah pakai sepatu. Duduk di sofa "sebentar" untuk memakai sepatu. Sekarang jam 22.00.</p></li>
+      <li data-e="🌙"><time>01.00</time><p>Baru merasa produktif. Tentu saja, waktunya tidur. Ulangi besok.</p></li>
+    </ol>
+  </section>
+
+  <section id="faq">
+    <h2>Pertanyaan yang sering diajukan (dan dijawab dengan malas)</h2>
+    <details><summary>Apakah rebahan itu dosa?</summary><p>Belum ada fatwa resmi. Tapi kalau ada, kami akan menundanya sampai minggu depan.</p></details>
+    <details><summary>Bagaimana cara daftar jadi anggota?</summary><p>Tidak usah. Kamu sudah jadi anggota dari lima menit yang lalu, saat kamu membuka halaman ini alih-alih mengerjakan tugas.</p></details>
+    <details><summary>Apakah situs ini akan membuat saya kaya?</summary><p>Tidak. Tapi kamu akan tenang, dan orang tenang lebih jarang membeli barang yang tidak perlu. Itu sudah hemat, kan? Kan?</p></details>
+    <details><summary>Kenapa situs ini cuma satu halaman?</summary><p>Bikin dua halaman itu capek. Kami menolak diskriminasi terhadap kemalasan kami sendiri.</p></details>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>Sudah sampai bawah? Salut.</h2>
+        <p>Kamu berhasil scroll sejauh ini tanpa mengerjakan satu hal pun yang berguna. Bakatmu luar biasa dan sangat kami hargai. Silakan tutup tab ini dan kembali ke kasur, kami tidak akan bilang siapa-siapa.</p>
+      </div>
+      <ul>
+        <li>🛏️ Kantor pusat: kasur, kamar nomor satu</li>
+        <li>📞 Kontak: WhatsApp, dibalas maksimal minggu depan</li>
+        <li>💌 Email: <span>rebahan@besok.aja</span></li>
+        <li>🏆 Penghargaan: Tidur Siang Terbaik 2026</li>
+      </ul>
+    </div>
+    <hr>
+    <p class="fine">© 2026 Klub Rebahan Indonesia. Semua hak dilindungi, semua kewajiban ditunda. Dibuat dengan HTML, CSS, dan sisa-sisa semangat hidup. Tidak ada sloth yang dirugikan, walau satu di pojok atas itu kayaknya pusing.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var go=document.getElementById('go'),inp=document.getElementById('tugas'),
+      out=document.getElementById('out'),hasil=document.getElementById('hasil'),
+      kred=document.getElementById('kred'),cp=document.getElementById('cp'),last=-1;
+  var ex=[
+    'Sebenarnya aku mau {t}, tapi kata horoskop hari ini bukan waktu yang tepat.',
+    '{t}? Tentu. Tapi Merkurius sedang retrograde, jadi secara kosmik itu tidak disarankan.',
+    'Aku lagi riset dulu soal {t}. Risetnya empat jam lewat video kucing. Ilmiah banget.',
+    'Kalau aku {t} sekarang, besok aku nggak punya kegiatan. Aku mikirin masa depanku.',
+    'Laptopku butuh update dulu sebelum aku bisa {t}. Update-nya belum ada. Ya sudah.',
+    'Aku baru mau {t}, tapi tiba-tiba kamar ini butuh dirapikan. Iya, sekarang. Tidak, bukan berarti aku rapikan.',
+    'Menurut penelitian yang kubuat sendiri barusan, {t} paling efektif dikerjakan minggu depan.',
+    'Aku sedang menyusun mental untuk {t}. Prosesnya lama, jangan diburu.',
+    'Sinyal di kepalaku lemah. Belum bisa {t}, tolong pindah ke area yang lebih bersemangat.',
+    'Aku ingin {t} dengan sepenuh hati, dan hatiku baru tersedia hari Jumat.'
+  ];
+  var lab=['cukup untuk lolos dari ibumu','bos mungkin pura-pura percaya','anak SD pun curiga','dipercaya kucingmu saja','bahkan kamu sendiri tidak yakin'];
+  go.addEventListener('click',function(){
+    var t=inp.value.trim().toLowerCase()||'kerjaan itu',i;
+    do{i=Math.floor(Math.random()*ex.length)}while(i===last);
+    last=i;
+    var p=Math.floor(Math.random()*41)+3;
+    hasil.textContent=ex[i].replace('{t}',t);
+    kred.textContent='Kredibilitas: '+p+'% ('+lab[p<15?4:p<25?3:p<33?2:p<40?1:0]+')';
+    cp.hidden=false;cp.textContent='Salin alasan';
+    out.classList.remove('pop');void out.offsetWidth;out.classList.add('pop');
+  });
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter')go.click()});
+  cp.addEventListener('click',function(){
+    var done=function(m){cp.textContent=m;setTimeout(function(){cp.textContent='Salin alasan'},1800)};
+    try{navigator.clipboard.writeText(hasil.textContent).then(function(){done('Tersalin! Selamat berbohong')},function(){done('Gagal, salin manual ya')})}
+    catch(e){done('Gagal, salin manual ya')}
+  });
+
+  var lvl=document.getElementById('lvl'),v=document.getElementById('verdict');
+  var tiers=[
+    ['🏃 Terlalu bersemangat','Ada yang salah denganmu. Sudah minum air? Sudah tidur? Curiga.'],
+    ['🚶 Setengah sadar','Kamu bergerak, tapi jiwamu masih di bantal. Wajar.'],
+    ['🧘 Santai profesional','Kamu duduk tegak, tapi hanya untuk terlihat sibuk di rapat.'],
+    ['🛋️ Rebahan tingkat lanjut','Kamu dan sofa sudah punya hubungan yang lebih serius dari hubunganmu dengan pekerjaan.'],
+    ['🦥 Sloth sejati','Selamat. Kamu sudah mencapai pencerahan. Jangan bangun, nanti hilang.']
+  ];
+  function upd(){
+    var i=Math.min(4,Math.floor(lvl.value/20.01));
+    v.innerHTML=tiers[i][0]+'<small>'+tiers[i][1]+'</small>';
+  }
+  lvl.addEventListener('input',upd);upd();
+})();
+</script>
+</body>
+</html>
